@@ -1,0 +1,35 @@
+.confirmation {
+  display: flex;
+  width: auto;
+  flex: 1;
+  height: max-content;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1500px;
+}
+
+.confirmation__container {
+  background-color: white;
+  padding: 10px;
+  min-height: calc(100vh - 60px);
+  box-sizing: border-box;
+}
+
+@media only screen and (max-width: 808px) {
+  .confirmation__container {
+    border-left: none;
+  }
+}
+
+@media only screen and (max-width: 465px) {
+  .confirmation__container {
+    padding: 5px;
+  }
+}
+
+@media only screen and (max-width: 280px) {
+  .confirmation__container {
+    padding: 2px;
+  }
+}

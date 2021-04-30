@@ -1,0 +1,338 @@
+.home {
+  padding-bottom: 20px;
+}
+
+.home__top {
+  display: flex;
+  flex: 1;
+}
+
+.home__topLeft {
+  border: solid 1px rgb(245, 245, 245);
+  flex: 0.25;
+}
+
+.home__topLeft > h4 {
+  background-color: rgb(0, 172, 0);
+  color: white;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.home__topLeft > nav {
+  line-height: 3.5;
+  padding-left: 15%;
+  color: #5c5c5c;
+  font-size: 15px;
+}
+
+.home__topRight {
+  flex: 0.75;
+  margin-left: 20px;
+}
+
+.home__topRight > div:first-child {
+  display: flex;
+}
+
+.home__topRight > div:first-child > input {
+  height: 30px;
+  width: 70%;
+  outline: none;
+  padding: 4px 5px;
+  border: solid 1px rgb(245, 245, 245);
+}
+
+.home__topRight > div:first-child > button {
+  height: 40px;
+  outline: none;
+  padding: 5px 15px;
+  border: none;
+  color: white;
+  background-color: rgb(0, 172, 0);
+}
+
+.home__topRight > div:first-child > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 20px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.home__topRight > div > div > span {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.home__topRight > div:nth-child(2) {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: space-around;
+  background-color: whitesmoke;
+  box-sizing: border-box;
+  margin-top: 20px;
+  padding: 20px 10px;
+  width: 100%;
+  height: calc(100% - 60px);
+}
+
+.home__topRight > div:nth-child(2) > div:first-child {
+  z-index: 3;
+}
+
+.home__topRight > div:nth-child(2) > div > h5 {
+  color: rgb(0, 172, 0);
+}
+
+.home__topRight > div:nth-child(2) > div > h1 {
+  display: flex;
+  flex-direction: column;
+  font-size: 28px;
+  padding: 10px 0;
+  line-height: 1.5;
+}
+
+.home__topRight > div:nth-child(2) > div > p {
+  color: #5c5c5c;
+  font-size: 13px;
+  margin-bottom: 30px;
+}
+
+.home__topRight > div:nth-child(2) > div > button {
+  height: 40px;
+  outline: none;
+  padding: 5px 15px;
+  border: none;
+  color: white;
+  font-weight: 600;
+  background-color: rgb(0, 172, 0);
+}
+
+.home__bottom > div > h2 {
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+  border-bottom: 1px solid darkgray;
+  line-height: 0.1em;
+}
+
+.home__bottom > div > h2 span {
+  background: white;
+  margin-bottom: -0.1em;
+  padding: 0 20px;
+}
+
+.home__bottom > div:first-child > picture {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 20px;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.home__bottom > div:first-child > picture > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: whitesmoke;
+  height: 200px;
+  padding: 20px 0;
+}
+
+.home__bottom > div:first-child > picture > div > img {
+  position: relative;
+  width: 85%;
+}
+
+.home__bottom > div:first-child > picture > div > span {
+  background-color: white;
+  color: rgb(0, 172, 0);
+  width: 150px;
+  text-align: center;
+  height: 30px;
+  line-height: 30px;
+  font-weight: 600;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.home__bottom > div:nth-child(2) > div {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.home__bottom > div:nth-child(2) > div > nav {
+  padding: 5px 20px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.home__bottom > div:nth-child(2) > picture {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 20px;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.home__bottom > div:nth-child(2) > picture > div > div:first-child {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: whitesmoke;
+  height: 150px;
+  padding: 20px 0;
+}
+
+.home__bottom > div:nth-child(2) > picture > div > div:first-child > img {
+  position: relative;
+  width: 85%;
+}
+
+.home__addIcon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 3;
+  visibility: hidden;
+}
+
+.home__bottom
+  > div:nth-child(2)
+  > picture
+  > div
+  > div:first-child:hover
+  > .home__addIcon {
+  visibility: visible;
+}
+
+.home__bottom > div:nth-child(2) > picture > div > div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15px;
+  line-height: 1.5;
+}
+
+.home__bottom
+  > div:nth-child(2)
+  > picture
+  > div
+  > div:nth-child(2)
+  > span:first-child {
+  font-size: 15px;
+}
+
+.home__bottom
+  > div:nth-child(2)
+  > picture
+  > div
+  > div:nth-child(2)
+  > span:last-child {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+@media only screen and (max-width: 960px) {
+  .home__topRight > div:first-child > div {
+    display: none;
+    margin-left: 0;
+  }
+
+  .home__top {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .home__topLeft {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  .home__topLeft > nav {
+    padding-left: 20px;
+  }
+
+  .home__topRight {
+    margin-left: 0;
+    flex: 1;
+    width: 100%;
+  }
+
+  .home__topRight > div:first-child > input {
+    width: 90%;
+  }
+
+  .home__addIcon {
+    visibility: visible;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .home__bottom > div:first-child > picture {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .home__bottom > div:nth-child(2) > picture {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .home__topRight > div:nth-child(2) > div:nth-child(2) > img {
+    width: 300px;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .home__topRight > div:nth-child(2) > div:nth-child(2) > img {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .home__bottom > div:first-child > picture {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .home__bottom > div:nth-child(2) > picture {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .home__bottom > div:nth-child(2) > div > nav {
+    padding: 5px;
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .home__bottom > div:first-child > picture {
+    grid-template-columns: 1fr;
+  }
+
+  .home__bottom > div:nth-child(2) > picture {
+    grid-template-columns: 1fr;
+  }
+
+  .home__bottom > div:first-child > picture > div,
+  .home__bottom > div:nth-child(2) > picture > div > div:first-child {
+    height: 250px;
+    padding: 20px 0;
+  }
+}
+
+@media only screen and (max-width: 280px) {
+  .home__bottom > div:nth-child(2) > div > nav {
+    font-size: 12px;
+  }
+}
