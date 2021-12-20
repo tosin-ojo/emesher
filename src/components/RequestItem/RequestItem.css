@@ -1,0 +1,130 @@
+.requestItem {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #ccc;
+  cursor: pointer;
+  padding: 20px 10px;
+}
+
+.requestItem:hover {
+  background-color: rgb(250, 250, 250);
+}
+
+.requestItem__details {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  line-height: 3;
+}
+
+.requestItem__subject {
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 1.5;
+  padding-bottom: 10px;
+}
+
+.requestItem__subject span {
+  font-weight: 400;
+  color: #555;
+  padding-left: 10px;
+  font-size: 13px;
+}
+
+.requestItem__price {
+  font-weight: 700;
+  font-size: 15px;
+  margin-top: -7px;
+}
+
+.requestItem__detailsLeft {
+  padding-right: 30px;
+  flex: 0.7;
+}
+
+.requestItem__detailsRight {
+  flex: 0.3;
+}
+
+.requestItem__info {
+  line-height: 1.5;
+  font-size: 15px;
+}
+
+.requestItem__bid {
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.requestItem__category {
+  color: #555;
+  font-size: 15px;
+  margin-top: 15px;
+  line-height: 1.5;
+  margin-bottom: -5px;
+  text-transform: capitalize;
+}
+
+.requestItem__category > span {
+  color: #009900;
+}
+
+@media only screen and (max-width: 767px) {
+  .requestItem__details {
+    flex-direction: column;
+  }
+
+  .requestItem__detailsLeft {
+    padding-right: 0;
+  }
+
+  .requestItem__price {
+    margin-top: 0;
+  }
+
+  .requestItem__bid {
+    font-weight: 600;
+    padding-right: 10px;
+  }
+
+  .requestItem__detailsRight {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+  }
+
+  .requestItem__category {
+    margin-top: 10px;
+  }
+}
+
+@media only screen and (max-width: 465px) {
+  .requestItem {
+    padding: 10px;
+  }
+  .requestItem__subject,
+  .requestItem__info,
+  .requestItem__category,
+  .requestItem__price,
+  .requestItem__bid {
+    font-size: 14px;
+  }
+
+  .requestItem__subject span {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .requestItem__subject,
+  .requestItem__info,
+  .requestItem__category,
+  .requestItem__price,
+  .requestItem__bid {
+    font-size: 12px;
+  }
+
+  .requestItem__subject span {
+    font-size: 10px;
+  }
+}

@@ -1,0 +1,266 @@
+.product {
+  height: max-content;
+  border-bottom: solid 1px #ccc;
+  font-size: 15px;
+  color: #2b2b2b;
+  padding: 10px 0;
+}
+
+.product:hover {
+  background-color: rgb(250, 250, 250);
+}
+
+.product__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5px;
+  height: 70px;
+}
+
+.product__top > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product__profileImage {
+  display: flex;
+  align-items: center;
+  height: 70px;
+}
+
+.product__profileImage > img {
+  height: 60px;
+  width: 60px;
+  border-radius: 100%;
+}
+
+.product__userName {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin-left: 10px;
+  font-weight: 600;
+}
+
+.product__userName > span:nth-child(2) {
+  margin-top: 5px;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.product__bottom {
+  display: flex;
+  flex-direction: row-reverse;
+  flex: 1;
+}
+
+.product__left {
+  flex: 0.15;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product__actionsCtn {
+  height: calc(100% - 70px);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.product__actions {
+  height: 78%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.product__action {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: max-content;
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+
+.product__action > span {
+  margin-left: 5px;
+}
+
+.product__action:first-child:hover {
+  background-color: rgba(0, 172, 0, 0.1);
+}
+
+.product__action:nth-child(2):hover {
+  background-color: rgba(0, 0, 255, 0.1);
+}
+
+.product__action:last-child:hover {
+  background-color: rgba(255, 140, 0, 0.1);
+}
+
+.product__right {
+  flex: 0.85;
+}
+
+.product__image {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.product__image > div {
+  display: flex;
+  width: 100%;
+  max-height: 420px;
+}
+
+.product__imgPlaceholder {
+  width: 100%;
+  aspect-ratio: 1.4 / 1;
+  background-color: rgb(245, 245, 245);
+  animation: loading 5s infinite;
+}
+
+.product__image > div > img {
+  padding: 1px;
+  width: 100%;
+  position: relative;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.product__image > div:last-child {
+  justify-content: space-between;
+  position: absolute;
+  height: 0;
+  top: 45%;
+}
+
+.product__imageIcon {
+  color: white;
+}
+
+.product__imageIcon:hover {
+  color: rgb(0, 172, 0);
+}
+
+.product__details {
+  padding: 10px;
+}
+
+.product__brief {
+  line-height: 1.5;
+}
+
+.product__title {
+  font-weight: 600;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.product__price {
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+  font-weight: 600;
+}
+
+.product__price > button {
+  background: rgb(0, 172, 0);
+  border: none;
+  color: #f7f7f7;
+  text-shadow: 0 -1px transparent;
+  width: fit-content;
+  outline: none;
+  padding: 5px 15px;
+  margin-left: 10px;
+}
+
+@keyframes loading {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@media only screen and (max-width: 599px) {
+  .product__action {
+    flex-direction: column;
+  }
+
+  .product__action > span {
+    margin-left: 0;
+  }
+}
+
+@media only screen and (max-width: 385px) {
+  .product__actions {
+    height: 70%;
+  }
+
+  .product__price > button {
+    font-size: 12px;
+    font-weight: 600;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .product__top {
+    height: 60px;
+  }
+
+  .product__profileImage {
+    height: 60px;
+  }
+
+  .product__profileImage > img {
+    height: 55px;
+    width: 55px;
+  }
+
+  .product__userName {
+    font-size: 14px;
+  }
+
+  .product__actionsCtn {
+    height: calc(100% - 60px);
+  }
+
+  .product__actions {
+    height: 65%;
+  }
+
+  .product__action > span {
+    font-size: 14px;
+  }
+
+  .product__brief {
+    font-size: 14px;
+  }
+
+  .product__title {
+    font-size: 15px;
+  }
+
+  .product__price {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 279px) {
+  .product__actions {
+    height: 56%;
+  }
+}

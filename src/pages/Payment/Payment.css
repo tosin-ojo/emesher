@@ -1,0 +1,270 @@
+.payment {
+  display: flex;
+  width: auto;
+  flex: 1;
+  height: max-content;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1500px;
+}
+
+.payment__container {
+  background-color: white;
+  border-left: solid 3px rgb(230, 230, 230);
+  padding: 10px;
+  min-height: calc(100vh - 60px);
+  box-sizing: border-box;
+}
+
+.payment__container > h2 {
+  text-align: center;
+  padding: 10px;
+  font-weight: 800;
+  color: white;
+  background-color: rgb(0, 172, 0);
+  border-bottom: 1px solid lightgray;
+}
+
+.payment__section {
+  display: flex;
+  padding: 20px;
+  margin: 0 20px;
+  border-bottom: 1px solid lightgray;
+}
+
+.payment__title {
+  flex: 0.25;
+  font-size: 15px;
+}
+
+.payment__address {
+  display: flex;
+  flex-direction: column;
+}
+
+.payment__address,
+.payment__items,
+.payment__details {
+  flex: 0.75;
+  font-size: 15px;
+}
+
+.payment__address > textarea {
+  padding: 8px 15px;
+  width: 75%;
+  font-size: 15px;
+  font-family: sans-serif;
+  margin-bottom: 5px;
+  outline: none;
+  border: none;
+  background-color: whitesmoke;
+  resize: none;
+  height: 60px;
+  line-height: 22px;
+  color: #333333;
+}
+
+.payment__address > input {
+  padding: 4px 8px;
+  width: fit-content;
+  font-size: 15px;
+  font-family: sans-serif;
+  margin-bottom: 20px;
+  outline: none;
+  border: none;
+  background-color: whitesmoke;
+  resize: none;
+  height: 30px;
+  line-height: 22px;
+  color: #333333;
+}
+
+/* Chrome, Safari, Edge, Opera */
+.payment__address > input::-webkit-outer-spin-button,
+.payment__address > input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.payment__address > input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.payment__itemsContainer {
+  display: flex;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  border-bottom: solid 1px #ccc;
+}
+
+.payment__itemsContainer:last-child {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  border-bottom: none;
+}
+
+.payment__itemsImage {
+  padding-right: 10px;
+}
+
+.payment__itemsImage > img {
+  max-width: 200px;
+}
+
+.payment__itemsInfo {
+  line-height: 2;
+  width: 100%;
+}
+
+.payment__itemsRating {
+  display: flex;
+}
+
+.payment__star {
+  display: flex;
+  color: #bbb;
+}
+
+.payment__detailsContainer {
+  line-height: 2;
+}
+
+.payment__detailsContainer > button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom, #00d61d 0, #009914 100%);
+  border: 1px solid #4fb55d;
+  color: #f7f7f7;
+  font-weight: 700;
+  text-shadow: 0 -1px transparent;
+  font-size: 14px;
+  width: fit-content;
+  padding: 7px;
+  outline: none;
+  margin-top: 10px;
+}
+
+@media only screen and (max-width: 808px) {
+  .payment__container {
+    border-left: none;
+  }
+
+  .payment__section {
+    padding: 10px;
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width: 770px) {
+  .payment__section {
+    flex-direction: column;
+  }
+
+  .payment__title {
+    flex: 1;
+    margin-bottom: 15px;
+  }
+
+  .payment__address > textarea {
+    width: 90%;
+    margin-bottom: 20px;
+    height: 50px;
+    line-height: 17px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .payment__container {
+    margin-left: 0;
+    padding: 5px 10px;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .payment__itemsImage > img {
+    max-width: 200px;
+  }
+
+  .payment__itemsInfo {
+    font-size: 14px;
+  }
+
+  .payment__detailsContainer {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .payment__address > textarea {
+    padding: 6px 12px;
+    width: 95%;
+    font-size: 12px;
+  }
+
+  .payment__address > input {
+    padding: 3px 6px;
+    font-size: 12px;
+  }
+
+  .payment__itemsImage > img {
+    max-width: 180px;
+  }
+
+  .payment__itemsInfo {
+    font-size: 12px;
+  }
+
+  .payment__detailsContainer {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 415px) {
+  .payment__itemsImage > img {
+    max-width: 60%;
+  }
+
+  .payment__itemsContainer {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .payment__container {
+    padding: 0;
+  }
+
+  .payment__container > h2 {
+    padding: 5px;
+    font-weight: 700;
+  }
+
+  .payment__address > textarea {
+    padding: 6px 12px;
+    width: 90%;
+    font-size: 12px;
+  }
+
+  .payment__address > input {
+    padding: 3px 6px;
+    font-size: 12px;
+  }
+
+  .payment__itemsInfo {
+    font-size: 11px;
+  }
+
+  .payment__detailsContainer {
+    font-size: 11px;
+  }
+}
+
+@media only screen and (max-width: 250px) {
+  .payment {
+    min-width: 250px;
+  }
+}

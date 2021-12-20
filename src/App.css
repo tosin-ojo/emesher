@@ -1,38 +1,166 @@
-.App {
-  text-align: center;
+button:hover {
+  opacity: 0.9;
+  cursor: pointer;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+::selection {
+  background: rgb(0, 172, 0);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+::-moz-selection {
+  background: rgb(0, 172, 0);
+  color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
+.app__alert {
+  right: 10px;
+  pointer-events: none;
+  position: fixed;
+  width: fit-content;
+  text-align: center;
+  z-index: 1500;
+}
+
+.fullImage {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1200;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.imageCancel {
+  position: absolute;
+  top: 2vh;
+  left: 2vw;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.imageComponents:hover .imageDelete,
+.imageComponents:hover .imageNavBig {
+  visibility: visible;
+}
+
+.imageComponents {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.imageComponents > img {
+  max-height: 90vh;
+  max-width: 90vw;
+  min-height: 50vh;
+  min-width: 50vw;
+  position: relative;
+}
+
+.imageSpinner {
+  position: relative;
+  z-index: 1;
+  margin-top: -25px;
+  top: -50%;
+  visibility: hidden;
+  display: flex;
+  margin-left: 5px;
+  width: 20px;
+  height: 20px;
+  border: dotted 2px rgb(0, 172, 0);
+  border-top: dotted 2px rgb(0, 172, 0);
+  border-right: dotted 2px rgb(0, 172, 0);
+  border-radius: 100%;
+  animation: spin 2s linear infinite;
+}
+
+.imageNavBig {
+  position: relative;
+  visibility: hidden;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1;
+  height: 30px;
+  margin-top: -30px;
+  top: -50%;
+  color: lightgrey;
+}
+
+.doubleArrowIcon:hover {
+  color: rgb(0, 172, 0);
+}
+
+.imageDelete {
+  position: relative;
+  visibility: hidden;
+  top: 5px;
+  right: 5px;
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  height: 50px;
+  margin-bottom: -50px;
+  z-index: 1;
+  color: white;
+}
+
+.deleteIcon:hover {
+  color: red;
+}
+
+.fetch__empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: calc(100% - 60px);
+}
+
+.fetch__empty > img {
+  width: 120px;
+  height: 120px;
+}
+
+@keyframes spin {
+  0% {
     transform: rotate(0deg);
   }
-  to {
+  100% {
     transform: rotate(360deg);
+  }
+}
+
+@media only screen and (orientation: portrait) {
+  .imageComponents > img {
+    min-width: 95vw;
+    min-height: auto;
+  }
+}
+
+@media only screen and (min-width: 1501px) {
+  .App {
+    box-shadow: 5px 5px 10px 4px #ccc;
+  }
+}
+
+@media only screen and (max-width: 465px) {
+  .App {
+    margin-bottom: 60px;
+  }
+}
+
+@media only screen and (max-width: 250px) {
+  .App {
+    min-width: 250px;
   }
 }

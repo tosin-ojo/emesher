@@ -1,0 +1,21 @@
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading::after {
+  content: "";
+  width: 40px;
+  height: 40px;
+  border: 2px solid #f3f3f3;
+  border-top: 3px solid rgb(0, 172, 0);
+  border-radius: 100%;
+  will-change: transform;
+  animation: spin 1s infinite linear;
+}

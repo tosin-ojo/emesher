@@ -1,0 +1,300 @@
+.bids {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  padding: 20px;
+  border-bottom: 1px solid #ccc;
+  position: relative;
+  background-color: white;
+  cursor: pointer;
+}
+
+.bids:hover {
+  background-color: rgb(250, 250, 250);
+}
+
+.bids:hover .bids__button > button {
+  visibility: visible;
+}
+
+.bids__body {
+  flex: 0.95;
+}
+
+.bids__right {
+  flex: 0.05;
+}
+
+.bids__head {
+  display: flex;
+  flex: 1;
+}
+
+.bids__images {
+  flex: 0.07;
+}
+
+.bids__headRight {
+  flex: 0.93;
+  margin-left: 15px;
+}
+
+.bids__images > img {
+  height: 50px;
+  width: 50px;
+  box-shadow: 1px 1px 5px 2px #ccc;
+  border-radius: 5px;
+}
+
+.bids__headTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bids__headTop > div:first-child {
+  display: flex;
+  align-items: center;
+}
+
+.bids__bidderStatus {
+  display: flex;
+}
+
+.bids__bidder {
+  font-weight: 600;
+}
+
+.bids__badges {
+  margin-left: 5px;
+}
+
+.bids__profile {
+  font-size: 14px;
+  color: #5c5c5c;
+  margin-left: 10px;
+}
+
+.bids__time {
+  font-size: 14px;
+  color: #5c5c5c;
+  margin-right: 30px;
+}
+
+.bids__headBottom {
+  display: flex;
+}
+
+.bids__headBottom > div {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.bids__headBottom > div > div {
+  font-size: 14px;
+  color: #5c5c5c;
+}
+
+.bids__bidderInfo {
+  padding: 20px 0;
+  margin-right: 30px;
+  line-height: 2;
+}
+
+.bids__bodyBottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bids__bidPrice {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.bids__button > button {
+  visibility: hidden;
+  background: linear-gradient(
+    to bottom,
+    rgb(255, 140, 0) 0,
+    rgb(218, 120, 0) 100%
+  );
+  border: 1px solid orange;
+  color: #f7f7f7;
+  font-weight: 700;
+  text-shadow: 0 -1px transparent;
+  padding: 5px;
+  outline: none;
+}
+
+.bids__right:hover {
+  opacity: 0.7;
+}
+
+.bid__more {
+  position: absolute;
+  z-index: 3;
+  top: 20px;
+  right: 60px;
+  background-color: white;
+  box-shadow: 0 0 7px darkgray;
+  border-radius: 5px;
+  width: fit-content;
+}
+
+.bid__moreDetail {
+  display: flex;
+  padding: 12px;
+  margin: 2px;
+  color: #888888;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.bid__moreDetail:nth-child(2) {
+  border-bottom: 1px solid darkgray;
+}
+
+.bid__moreNav {
+  color: #333;
+  margin-left: 10px;
+  line-height: 18px;
+  padding-right: 10px;
+}
+
+.bid__moreDetail:hover {
+  background-color: lightgray;
+}
+
+.bids__hide {
+  display: none;
+}
+
+@media only screen and (max-width: 767px) {
+  .bids {
+    padding: 10px;
+  }
+
+  .bid__more {
+    top: 10px;
+    right: 50px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .bids {
+    padding-right: 0;
+  }
+
+  .bid__more {
+    right: 30px;
+  }
+
+  .bids__bidder,
+  .bid__moreNav {
+    font-size: 14px;
+  }
+
+  .bids__time,
+  .bids__profile {
+    font-size: 12px;
+  }
+
+  .bids__badges {
+    margin-left: 3px;
+  }
+
+  .bids__profile {
+    margin-left: 7px;
+  }
+
+  .bids__time {
+    margin-right: 5px;
+  }
+
+  .bids__bidderInfo {
+    margin-right: 5px;
+    font-size: 14px;
+  }
+
+  .bids__bidPrice {
+    font-size: 13px;
+  }
+
+  .bids__right {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .bids__button > button {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .bids__headTop {
+    align-items: flex-start;
+  }
+
+  .bids__headTop > div:first-child {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .bids__profile {
+    margin-left: 0;
+    margin-top: 3px;
+  }
+
+  .bids__headBottom > div {
+    margin-right: 5px;
+    margin-top: 5px;
+  }
+
+  .bids__headBottom > div > div {
+    font-size: 12px;
+  }
+
+  .bid__more {
+    right: 20px;
+  }
+
+  .bid__moreDetail {
+    padding: 6px;
+  }
+
+  .bid__moreNav {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .bids__time {
+    display: none;
+  }
+
+  .bids__hide {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .bids__bidder,
+  .bid__moreNav {
+    font-size: 13px;
+  }
+
+  .bids__bidderInfo {
+    font-size: 12px;
+  }
+
+  .bids__bidPrice {
+    font-size: 11px;
+  }
+
+  .bids__button > button {
+    font-size: 10px;
+  }
+}

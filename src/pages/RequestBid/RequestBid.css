@@ -1,0 +1,853 @@
+.requestBid {
+  display: flex;
+  width: auto;
+  flex: 1;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1500px;
+  box-sizing: border-box;
+  font-size: 15px;
+  color: #2b2b2b;
+}
+
+.requestBid__header {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  padding-right: 10%;
+  padding-bottom: 0;
+  background-color: rgb(0, 172, 0);
+  height: max-content;
+}
+
+.requestBid__headerTop {
+  display: flex;
+  justify-content: space-between;
+}
+
+.requestBid__title {
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+}
+
+.requestBid__status {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: whitesmoke;
+  background: rgb(0, 122, 0);
+  width: 100px;
+  line-height: 1.5;
+  border-radius: 20px;
+}
+
+.requestBid__headerNav {
+  display: flex;
+  color: whitesmoke;
+  margin-top: 20px;
+}
+
+.requestBid__detailsNav,
+.requestBid__proposalsNav {
+  padding: 20px;
+  padding-bottom: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.requestBid__sections {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+}
+
+.requestBid__bodyContainer {
+  box-sizing: border-box;
+  display: flex;
+  margin: 10px;
+  flex-direction: column;
+  flex: 0.6;
+}
+
+.requestBid__body,
+.requestBid__bid {
+  background-color: white;
+  width: auto;
+  height: max-content;
+  box-shadow: 1px 1px 5px 2px #ccc;
+}
+
+.requestBid__bid {
+  margin-top: 10px;
+}
+
+.requestBid__bodyTop,
+.requestBid__bidTop,
+.requestBid__detailsTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.requestBid__bodyTopLeft,
+.requestBid__bidTopLeft,
+.requestBid__detailsTopLeft,
+.requestBid__clientVerifications > div:first-child {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.requestBid__bodyTopRight {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.requestBid__bodyPrice {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.requestBid__bodyTime {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.requestBid__bodyContent {
+  padding: 20px;
+  line-height: 2;
+}
+
+.requestBid__bodyContent > div:last-child {
+  margin-left: 10px;
+  font-size: 15px;
+}
+
+.requestBid__bodyContentHeader {
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 20px;
+}
+
+.requestBid__bodyContentHeader:first-child {
+  margin-top: 0;
+}
+
+.requestBid__bodyProductHeader {
+  font-size: 18px;
+  font-weight: 700;
+  padding: 10px 20px;
+}
+
+.requestBid__bodyProductProducts {
+  display: flex;
+  margin: 0 20px;
+  padding-bottom: 20px;
+}
+
+.requestBid__bodyProductProducts > span {
+  text-transform: capitalize;
+  padding: 5px;
+  margin: 0 3px;
+  border: 1px solid #ddd;
+  width: fit-content;
+  font-size: 14px;
+  color: rgb(0, 172, 0);
+  cursor: pointer;
+}
+
+.requestBid__textArea,
+.requestBid__BidInput {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.requestBid__textArea > label,
+.requestBid__BidInput > label {
+  margin-bottom: 10px;
+}
+
+.requestBid__textArea > textarea {
+  height: 200px;
+  padding: 10px;
+  font-size: 16px;
+  font-family: inherit;
+  outline: none;
+  border: none;
+  box-shadow: 1px 1px 5px 2px #ccc;
+  resize: none;
+}
+
+.requestBid__bidBottom {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.requestBid__input {
+  display: flex;
+}
+
+.requestBid__input > input {
+  box-sizing: border-box;
+  padding: 0 10px;
+  height: 40px;
+  font-size: 16px;
+  font-family: inherit;
+  width: 100%;
+  outline: none;
+  border: none;
+  box-shadow: 1px 1px 5px 2px #ccc;
+}
+
+.requestBid__input > input::-webkit-outer-spin-button,
+.requestBid__input > input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.requestBid__input > input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.requestBid__input > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 50px;
+  background-color: #eee;
+  box-shadow: 1px 1px 5px 2px #ccc;
+  color: rgb(0, 172, 0);
+  font-weight: 700;
+}
+
+.requestBid__button {
+  padding-top: 25px;
+  padding-right: 20px;
+}
+
+.requestBid__button > button {
+  background: rgb(0, 172, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #4fb55d;
+  color: #f7f7f7;
+  font-weight: 700;
+  font-size: 16px;
+  text-shadow: 0 -1px transparent;
+  padding: 0 25px;
+  width: max-content;
+  height: 40px;
+  outline: none;
+  box-shadow: 1px 1px 5px 2px #ccc;
+}
+
+.requestBid__details {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  margin-right: 10px;
+  flex: 0.4;
+}
+
+.requestNid__clientInfoBox {
+  background-color: white;
+  box-shadow: 1px 1px 5px 2px #ccc;
+  height: max-content;
+}
+
+.requestBid__detailsClient,
+.requestBid__clientVerifications {
+  padding: 20px;
+  line-height: 2;
+}
+
+.requestBid__detailsClient > div,
+.requestBid__clientVerifications > div {
+  display: flex;
+  align-items: center;
+}
+
+.requestBid__clientVerifications > div {
+  cursor: pointer;
+}
+
+.requestBid__detailsClient > div > span,
+.requestBid__clientVerifications > div > span {
+  margin-left: 10px;
+}
+
+.requestBid__detailsClient > div:first-child > .requestBid__profile {
+  color: rgb(0, 172, 0);
+  cursor: pointer;
+}
+
+.requestBid__detailsClient > div > span > span {
+  background-color: rgb(0, 199, 0);
+  color: white;
+  padding: 2px 5px;
+  font-weight: 700;
+}
+
+.requestBid__reportBtn {
+  margin: 10px auto;
+  width: 100%;
+}
+
+.requestBid__reportBtn > button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background: linear-gradient(180deg, #fff 0, #f0f0f0);
+  border: 1px solid #ccc;
+  font-weight: 600;
+  padding: 10px;
+  cursor: pointer;
+  outline: none;
+}
+
+.bidDeleteBtn > button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background: linear-gradient(180deg, crimson 0, rgb(173, 17, 48));
+  color: whitesmoke;
+  border: 1px solid #ccc;
+  font-weight: 600;
+  padding: 10px;
+  cursor: pointer;
+  outline: none;
+}
+
+.requestBid__reportBtn > button > span {
+  padding-left: 5px;
+  display: flex;
+}
+
+.requestBid__spinner {
+  display: none;
+  margin-left: 5px;
+  width: 10px;
+  height: 10px;
+  border: dotted 2px #ccc;
+  border-top: dotted 2px white;
+  border-right: dotted 2px white;
+  border-radius: 100%;
+  animation: spin 2s linear infinite;
+}
+
+.requestBid__bidsCtn {
+  display: flex;
+  margin: 10px;
+  margin-bottom: 0;
+  flex: 1;
+}
+
+.requestBid__bids {
+  flex: 0.6;
+  margin-right: 10px;
+}
+
+.requestBid__bidsDetails {
+  flex: 0.4;
+  height: max-content;
+  background-color: white;
+  padding: 10px 0;
+}
+
+.requestBid__bidsDetailsHeader {
+  font-size: 20px;
+  padding: 10px 20px;
+  font-weight: 700;
+  border-bottom: solid 1px #ccc;
+}
+
+.requestBid__bidDetailsBody > div {
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+}
+
+.requestBid__bidDetailsBody > div > span {
+  padding-left: 10px;
+  font-size: 15px;
+}
+
+/* Loading */
+.requestBid__loading {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+}
+
+.requestBid__loadingLeft {
+  box-sizing: border-box;
+  display: flex;
+  margin: 10px;
+  flex-direction: column;
+  flex: 0.6;
+}
+
+.requestBid__loadingLeftTop {
+  height: max-content;
+  padding-bottom: 20px;
+}
+
+.requestBid__loadingLeftBottom {
+  height: max-content;
+  margin-top: 10px;
+}
+
+.requestBid__loadingLeftTop,
+.requestBid__loadingLeftBottom {
+  background-color: white;
+  width: auto;
+  box-shadow: 1px 1px 5px 2px #ccc;
+}
+
+.requestBid__loadingLeftTopHeader,
+.requestBid__loadingLeftBottomHeader,
+.requestBid__loadingRightHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ccc;
+  height: 50px;
+}
+
+.requestBid__loadingLeftTopcontent,
+.requestBid__loadingLeftBottomcontent,
+.requestBid__loadingRightHeaderContent {
+  height: 40px;
+  width: 200px;
+  background-color: rgb(245, 245, 245);
+  animation: loading 5s infinite;
+}
+
+.requestBid__loadingLeftTopBody {
+  display: flex;
+  height: 25px;
+  margin-top: 20px;
+  margin-left: 20px;
+  width: 90%;
+  background-color: rgb(245, 245, 245);
+  animation: loading 5s infinite;
+}
+
+.requestBid__loadingLeftTopFoot {
+  padding: 20px;
+}
+
+.requestBid__loadingLeftTopFootTop {
+  height: 30px;
+  width: 40%;
+  background-color: rgb(245, 245, 245);
+  animation: loading 5s infinite;
+  margin-top: 10px;
+}
+
+.requestBid__loadingLeftTopFootBottom {
+  height: 25px;
+  width: 20%;
+  background-color: rgb(245, 245, 245);
+  animation: loading 5s infinite;
+  margin-top: 10px;
+}
+
+.requestBid__loadingRight {
+  background-color: white;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  flex: 0.4;
+  height: max-content;
+}
+
+.requestBid__loadingLeftBottomMessage {
+  background-color: rgb(245, 245, 245);
+  animation: loading 5s infinite;
+  height: 40px;
+  margin: 5px;
+}
+
+.requestBid__loadingLeftBottomProposal,
+.requestBid__loadingRightBody,
+.requestBid__loadingRightFoot {
+  padding: 20px;
+}
+
+.requestBid__loadingProposalLabel {
+  display: flex;
+  height: 25px;
+  width: 35%;
+  background-color: rgb(245, 245, 245);
+  animation: loading 5s infinite;
+}
+
+.requestBid__loadingProposalText {
+  height: 200px;
+  margin-top: 10px;
+  background-color: rgb(245, 245, 245);
+  animation: loading 5s infinite;
+}
+
+.requestBid__loadingLeftBottomFoot {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.requestBid__loadingBid {
+  background-color: rgb(245, 245, 245);
+  animation: loading 5s infinite;
+  height: 45px;
+  width: 40%;
+}
+
+.requestBid__loadingButton {
+  background-color: rgb(245, 245, 245);
+  animation: loading 5s infinite;
+  height: 45px;
+  width: 20%;
+}
+
+.requestBid__loadingRightBodyContent {
+  display: flex;
+  flex: 1;
+  justify-content: flex-start;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+.requestBid__loadingRightBodyContent > div:first-child {
+  background-color: rgb(245, 245, 245);
+  animation: loading 5s infinite;
+  height: 40px;
+  width: 40px;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+.requestBid__loadingRightBodyContent > div:last-child {
+  background-color: rgb(245, 245, 245);
+  animation: loading 5s infinite;
+  flex: 0.9;
+  height: 30px;
+  width: 70px;
+}
+
+@keyframes loading {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@media only screen and (max-width: 979px) {
+  .requestBid__header {
+    padding-right: 20px;
+  }
+
+  .requestBid__sections,
+  .requestBid__loading {
+    flex-direction: column;
+  }
+
+  .requestBid__bidsCtn {
+    flex-direction: column-reverse;
+  }
+
+  .requestBid__loadingRight,
+  .requestBid__loadingLeftBottomMessage {
+    display: none;
+  }
+
+  .requestBid__details {
+    margin-top: 0;
+    margin-left: 10px;
+  }
+
+  .requestBid__bids {
+    margin-right: 0;
+  }
+
+  .requestBid__bidsDetails {
+    margin-bottom: 10px;
+  }
+}
+
+@media only screen and (max-width: 499px) {
+  .requestBid__headerTop {
+    flex-direction: column-reverse;
+  }
+
+  .requestBid__title {
+    margin-top: 10px;
+  }
+
+  .requestBid__title,
+  .requestBid__status {
+    font-size: 16px;
+  }
+  .requestBid__bodyContainer,
+  .requestBid__loadingLeft,
+  .requestBid__bidsCtn {
+    margin: 5px;
+  }
+
+  .requestBid__bidsCtn {
+    margin-bottom: 0;
+  }
+
+  .requestBid__status {
+    width: 80px;
+  }
+
+  .requestBid__bid,
+  .requestBid__loadingLeftBottom {
+    margin-top: 5px;
+  }
+
+  .requestBid__details {
+    margin-top: 0;
+    margin-right: 5px;
+    margin-left: 5px;
+  }
+
+  .requestBid__reportBtn {
+    margin: 5px auto;
+  }
+
+  .requestBid__header {
+    padding: 10px;
+  }
+
+  .requestBid__header {
+    padding: 10px;
+    padding-bottom: 0;
+  }
+
+  .requestBid__bodyTop,
+  .requestBid__bidTop,
+  .requestBid__detailsTop,
+  .requestBid__detailsNav,
+  .requestBid__proposalsNav,
+  .requestBid__bodyContent,
+  .requestBid__bodyProductHeader,
+  .requestBid__textArea,
+  .requestBid__BidInput,
+  .requestBid__detailsClient,
+  .requestBid__clientVerifications,
+  .requestBid__loadingLeftBottomHeader,
+  .requestBid__loadingLeftBottomProposal,
+  .requestBid__loadingLeftBottomFoot {
+    padding: 10px;
+  }
+
+  .requestBid__bodyTop,
+  .requestBid__loadingLeftTopHeader {
+    flex-direction: column;
+  }
+
+  .requestBid__bodyTopRight {
+    align-items: center;
+  }
+
+  .requestBid__bodyTopLeft,
+  .requestBid__bidTopLeft,
+  .requestBid__detailsTopLeft,
+  .requestBid__bidsDetailsHeader,
+  .requestBid__clientVerifications > div:first-child {
+    font-size: 18px;
+  }
+
+  .requestBid__bodyProductProducts {
+    margin: 0 10px;
+    padding-bottom: 10px;
+  }
+
+  .requestBid__bodyPrice,
+  .requestBid__bodyProductHeader {
+    font-size: 16px;
+  }
+
+  .requestBid__bodyProductProducts > span,
+  .requestBid__bodyTime {
+    font-size: 12px;
+  }
+
+  .requestBid__textArea > textarea,
+  .requestBid__input > input,
+  .requestBid__button > button,
+  .requestBid__input > div,
+  .requestBid__bodyContent,
+  .requestBid__textArea > label,
+  .requestBid__BidInput > label,
+  .requestBid__detailsClient > div,
+  .requestBid__clientVerifications > div,
+  .requestBid__alert,
+  .requestBid__headerNav,
+  .requestBid__bidDetailsBody > div > span {
+    font-size: 14px;
+  }
+
+  .requestBid__button {
+    padding-right: 10px;
+  }
+
+  .requestBid__input > input,
+  .requestBid__button > button,
+  .requestBid__input > div {
+    height: 35px;
+  }
+
+  .requestBid__bidsDetails {
+    margin-bottom: 5px;
+  }
+
+  .requestBid__bidsDetailsHeader {
+    padding: 10px;
+  }
+
+  .requestBid__bidDetailsBody > div {
+    padding: 10px;
+  }
+
+  .requestBid__loadingLeftTopcontent:first-child {
+    margin-bottom: 5px;
+    height: 35px;
+    width: 160px;
+  }
+
+  .requestBid__loadingLeftTopcontent:last-child {
+    height: 45px;
+  }
+
+  .requestBid__loadingLeftBottomcontent {
+    height: 35px;
+  }
+
+  .requestBid__loadingProposalLabel {
+    height: 20px;
+  }
+
+  .requestBid__loadingLeftTopBody {
+    height: 20px;
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+
+  .requestBid__loadingBid,
+  .requestBid__loadingButton {
+    height: 45px;
+  }
+
+  .requestBid__loadingLeftTopFoot {
+    padding: 10px;
+  }
+
+  .requestBid__loadingLeftTopFootTop {
+    height: 23px;
+    margin-top: 10px;
+  }
+
+  .requestBid__loadingLeftTopFootBottom {
+    height: 18px;
+    margin-top: 7px;
+  }
+}
+
+@media only screen and (max-width: 385px) {
+  .requestBid__loadingLeftTopcontent:first-child,
+  .requestBid__loadingLeftBottomcontent {
+    height: 30px;
+  }
+
+  .requestBid__loadingLeftTopcontent:last-child {
+    height: 35px;
+  }
+
+  .requestBid__loadingLeftTopBody {
+    height: 18px;
+    margin-top: 8px;
+  }
+
+  .requestBid__loadingLeftTopFootTop {
+    height: 20px;
+  }
+
+  .requestBid__loadingLeftTopFootBottom {
+    height: 15px;
+  }
+
+  .requestBid__loadingBid,
+  .requestBid__loadingButton {
+    height: 35px;
+  }
+
+  .requestBid__loadingLeftBottomcontent {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .requestBid__detailsNav,
+  .requestBid__proposalsNav {
+    padding-bottom: 5px;
+  }
+
+  .requestBid__bodyTopLeft,
+  .requestBid__bidTopLeft,
+  .requestBid__detailsTopLeft,
+  .requestBid__bidsDetailsHeader,
+  .requestBid__clientVerifications > div:first-child {
+    font-size: 16px;
+  }
+
+  .requestBid__bodyPrice,
+  .requestBid__bodyProductHeader,
+  .requestBid__title,
+  .requestBid__status {
+    font-size: 14px;
+  }
+
+  .requestBid__bodyProductProducts > span,
+  .requestBid__bodyTime {
+    font-size: 10px;
+  }
+
+  .requestBid__textArea > textarea,
+  .requestBid__input > input,
+  .requestBid__button > button,
+  .requestBid__input > div,
+  .requestBid__bodyContent,
+  .requestBid__textArea > label,
+  .requestBid__BidInput > label,
+  .requestBid__detailsClient > div,
+  .requestBid__clientVerifications > div,
+  .requestBid__alert,
+  .requestBid__bidDetailsBody > div > span {
+    font-size: 12px;
+  }
+}
