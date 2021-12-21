@@ -174,7 +174,6 @@
 
   .sidebarSmall {
     height: calc(100vh - 59px);
-    margin-bottom: 60px;
   }
 }
 
