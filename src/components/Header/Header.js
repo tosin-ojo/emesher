@@ -5,11 +5,7 @@ import { useStateValue } from "../../StateProvider";
 import Forms from "../Forms/Forms";
 import Logo from "../../images/emesher.png";
 import { IconButton } from "@material-ui/core";
-import {
-  ArrowDropDown,
-  MenuOutlined,
-  NotificationsOutlined,
-} from "@material-ui/icons";
+import { ArrowDropDown, MenuOutlined } from "@material-ui/icons";
 
 function Header() {
   const [{ user, sidebar }, dispatch] = useStateValue();
@@ -26,7 +22,7 @@ function Header() {
   };
 
   const handleClickProfile = () => {
-    document.querySelector(".header__details").removeAttribute("open");
+    document.querySelector("#header__details__id").removeAttribute("open");
     if (!user) {
       return history.push("/login");
     }
@@ -36,7 +32,7 @@ function Header() {
   const handleFormSelect = (type) => {
     setFormType(type);
     setShowForm(true);
-    document.querySelector(".header__details").removeAttribute("open");
+    document.querySelector("#header__details__id").removeAttribute("open");
   };
 
   const closeForm = (value) => {
@@ -91,12 +87,13 @@ function Header() {
         <nav className="header__nav">
           <div className="header__option">
             {/* <div className="header__countLarge"><div>0</div></div> */}
-            <div className="header__summary">
-              <NotificationsOutlined />
-            </div>
+            <div className="header__summary"></div>
           </div>
 
-          <details className="header__option header__details">
+          <details
+            id="header__details__id"
+            className="header__option header__details"
+          >
             <summary className="header__summary">
               <img src={user?.photoURL} alt="" />
               <ArrowDropDown fontSize="small" />

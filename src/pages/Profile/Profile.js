@@ -5,6 +5,7 @@ import { useStateValue } from "../../StateProvider";
 import firebase from "firebase";
 import { db, storage } from "../../utils/firebase";
 import ProductDetails from "../../components/ProductDetails/ProductDetails";
+import RequestItem from "../../components/RequestItem/RequestItem";
 import { IconButton } from "@material-ui/core";
 import moment from "moment";
 import Loading from "../../components/Loading/Loading";
@@ -23,7 +24,6 @@ import {
 import Product from "../../components/Product/Product";
 import Logo from "../../images/emesher.png";
 import Forms from "../../components/Forms/Forms";
-import CurrencyFormat from "react-currency-format";
 
 function Profile() {
   const [{ user }] = useStateValue();
@@ -32,6 +32,7 @@ function Profile() {
   const [profile, setProfile] = useState({});
   const [fetchingProfile, setFetchingProfile] = useState(true);
   const [product, setProduct] = useState([]);
+  const [request, setRequest] = useState([]);
   const [fetchingProduct, setFetchingProduct] = useState(false);
   const [totalProduct, setTotalProduct] = useState(0);
   const [index, setIndex] = useState(0);
@@ -173,9 +174,26 @@ function Profile() {
         setFetchingProduct(false);
       });
 
+    const requestEffect = db
+      .collection("requests")
+      .where("email", "==", user.email);
+    const cleanUpGetRequest = requestEffect
+      .orderBy("createdAt", "desc")
+      .limit(10)
+      .onSnapshot((snapshot) => {
+        setRequest(
+          snapshot.docs.map((doc) => ({
+            id: doc.id,
+            data: doc.data(),
+          }))
+        );
+        setFetchingProduct(false);
+      });
+
     return () => {
       cleanUpGetProduct();
       cleanUpSnapshotProductStat();
+      cleanUpGetRequest();
     };
   }, [user]);
 
@@ -237,7 +255,7 @@ function Profile() {
                       <button onClick={() => setShowForm(true)}>
                         Edit profile
                       </button>
-                      <button>
+                      <button style={{ visibility: "hidden" }}>
                         <EmailOutlined style={{ fontSize: "16px" }} />
                       </button>
                     </div>
@@ -264,20 +282,6 @@ function Profile() {
                     <div className="profile__rating">
                       <GradeOutlined fontSize="small" />
                       <span>4.7(193)</span>
-                    </div>
-                    <div className="profile__balance">
-                      <span>
-                        <CurrencyFormat
-                          renderText={(value) => value}
-                          decimalScale={2}
-                          value={0}
-                          displayType={"text"}
-                          thousandSeparator={true}
-                          prefix={"₦"}
-                        />
-                      </span>{" "}
-                      Balance
-                      <span>1000</span> Coins
                     </div>
                   </div>
                   <div className="profile__left__details">
@@ -329,16 +333,10 @@ function Profile() {
                   About
                 </nav>
                 <nav
-                  onClick={() => setNav("articles")}
-                  style={nav === "articles" ? activeNavStyle : {}}
+                  onClick={() => setNav("request")}
+                  style={nav === "request" ? activeNavStyle : {}}
                 >
-                  Articles
-                </nav>
-                <nav
-                  onClick={() => setNav("reviews")}
-                  style={nav === "reviews" ? activeNavStyle : {}}
-                >
-                  Reviews
+                  Request
                 </nav>
               </div>
               <div className="profile__bottom">
@@ -361,6 +359,29 @@ function Profile() {
                               showDetails={displayProductDetails}
                               currentDetails={currentDetails}
                               profile
+                            />
+                          ))
+                        )}
+                      </>
+                    )}
+                  </>
+                )}
+                {nav === "request" && (
+                  <>
+                    {fetchingProduct ? (
+                      <Loading />
+                    ) : (
+                      <>
+                        {request.length < 1 ? (
+                          <h4 className="profile__empty">
+                            No content to display
+                          </h4>
+                        ) : (
+                          request.map((req, i) => (
+                            <RequestItem
+                              key={req.id}
+                              id={req.id}
+                              request={req.data}
                             />
                           ))
                         )}
@@ -400,7 +421,7 @@ function Profile() {
               <div className="profile__bio">{profile.bio}</div>
               <div className="profile__buttons">
                 <button onClick={() => setShowForm(true)}>Edit profile</button>
-                <button>
+                <button style={{ visibility: "hidden" }}>
                   <EmailOutlined style={{ fontSize: "16px" }} />
                 </button>
               </div>
@@ -422,20 +443,6 @@ function Profile() {
                 <div className="profile__rating">
                   <GradeOutlined fontSize="small" />
                   <span>4.7(193)</span>
-                </div>
-                <div className="profile__balance">
-                  <span>
-                    <CurrencyFormat
-                      renderText={(value) => value}
-                      decimalScale={2}
-                      value={0}
-                      displayType={"text"}
-                      thousandSeparator={true}
-                      prefix={"₦"}
-                    />
-                  </span>{" "}
-                  Balance
-                  <span>1000</span> Coins
                 </div>
               </div>
               <div className="profile__detail">

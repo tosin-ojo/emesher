@@ -1116,10 +1116,8 @@ function Forms({ productEdit, productId, showForm, closeForm, type, profile }) {
                       onChange={(e) => setCategory(e.target.value)}
                     >
                       <option value="none">Select Category</option>
-                      <option value="foodstuff">Food Stuff</option>
-                      <option value="seed">Seeds</option>
-                      <option value="animal">Animal Protein</option>
-                      <option value="crop">Crop</option>
+                      <option value="service">Service</option>
+                      <option value="commodity">Commodity</option>
                     </select>
                   </div>
                   {type === "product" && (

@@ -29,9 +29,10 @@ function RequestBid() {
   const history = useHistory();
   const [fetching, setFetching] = useState(true);
   const [request, setRequest] = useState([]);
+  const [proposal, setProposal] = useState([]);
   const [requestInfo, setRequestInfo] = useState([]);
   const [activeNav, setActiveNav] = useState("details");
-  const [proposal, setProposal] = useState("");
+  const [bids, setBids] = useState([]);
   const [bid, setBid] = useState(0);
   const [editBid, setEditBid] = useState([]);
   const [checkingBid, setCheckingBid] = useState(true);
@@ -146,8 +147,7 @@ function RequestBid() {
           reviewCount: 0,
           completedTrans: 0,
           totalTrans: 0,
-          imageUrl:
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTT3basWwcdU7w8aqChdR9HTRdNmbnL_Dm4w&usqp=CAU",
+          imageUrl: user.photoURL,
           displayName: user.displayName,
           username: "emesher",
           bid: parseInt(bid),
@@ -237,6 +237,22 @@ function RequestBid() {
           setCheckingBid(false);
         });
     }
+
+    db.collection("bids")
+      .where("slug", "==", slug.current.split("/")[2])
+      .get()
+      .then((snapshot) => {
+        if (snapshot.size < 1) {
+          return setBids([]);
+        }
+
+        setBids(
+          snapshot.docs.map((doc) => ({
+            id: doc.id,
+            data: doc.data(),
+          }))
+        );
+      });
 
     db.collection("requests")
       .where("slug", "==", slug.current.split("/")[2])
@@ -584,11 +600,11 @@ function RequestBid() {
             {request[0].data.email !== user.email && activeNav === "proposals" && (
               <div className="requestBid__bidsCtn">
                 <div className="requestBid__bids">
-                  <Bids />
-                  <Bids />
-                  <Bids />
-                  <Bids />
-                  <Bids />
+                  {bids.map((bid) => (
+                    <div key={bid.id}>
+                      <Bids bid={bid} />
+                    </div>
+                  ))}
                 </div>
                 <section className="requestBid__bidsDetails">
                   <h3 className="requestBid__bidsDetailsHeader">
@@ -597,15 +613,32 @@ function RequestBid() {
                   <div className="requestBid__bidDetailsBody">
                     <div>
                       <BeenhereOutlined fontSize="small" />
-                      <span>5 bids submitted</span>
+                      <span>
+                        {bids.length} bid{bids.length > 1 ? "s" : ""} submitted
+                      </span>
                     </div>
                     <div>
                       <GradeOutlined fontSize="small" />
-                      <span>4.5 (Average)</span>
+                      <span>
+                        <span>{requestInfo[0]?.data.rating?.toFixed(1)}</span> (
+                        {requestInfo[0]?.data.reviewCount} reviews)
+                      </span>
                     </div>
                     <div>
                       <MoneyOutlined fontSize="small" />
-                      <span>#65,000 (Average)</span>
+                      <span>
+                        <CurrencyFormat
+                          renderText={(value) => value}
+                          decimalScale={2}
+                          value={bids
+                            .map((bid) => bid.data.bid)
+                            .reduce((acc, value) => acc + value, 0)}
+                          displayType={"text"}
+                          thousandSeparator={true}
+                          prefix={"₦"}
+                        />{" "}
+                        (Average)
+                      </span>
                     </div>
                   </div>
                 </section>
@@ -762,15 +795,32 @@ function RequestBid() {
                   <div className="requestBid__bidDetailsBody">
                     <div>
                       <BeenhereOutlined fontSize="small" />
-                      <span>5 bids submitted</span>
+                      <span>
+                        {bids.length} bid{bids.length > 1 ? "s" : ""} submitted
+                      </span>
                     </div>
                     <div>
                       <GradeOutlined fontSize="small" />
-                      <span>4.5 (Average)</span>
+                      <span>
+                        <span>{requestInfo[0]?.data.rating?.toFixed(1)}</span> (
+                        {requestInfo[0]?.data.reviewCount} reviews)
+                      </span>
                     </div>
                     <div>
                       <MoneyOutlined fontSize="small" />
-                      <span>#65,000 (Average)</span>
+                      <span>
+                        <CurrencyFormat
+                          renderText={(value) => value}
+                          decimalScale={2}
+                          value={bids
+                            .map((bid) => bid.data.bid)
+                            .reduce((acc, value) => acc + value, 0)}
+                          displayType={"text"}
+                          thousandSeparator={true}
+                          prefix={"₦"}
+                        />{" "}
+                        (Average)
+                      </span>
                     </div>
                   </div>
                 </section>

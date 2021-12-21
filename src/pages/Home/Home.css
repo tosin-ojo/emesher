@@ -93,8 +93,10 @@
   font-size: 12px;
 }
 
+.home__search,
 .home__right > form:nth-child(2) > select,
 .home__right > form:nth-child(3) > select,
+.home__order__select,
 .home__right > form:nth-child(4) > select {
   border: none;
   outline: none;

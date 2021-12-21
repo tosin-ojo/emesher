@@ -97,8 +97,8 @@
 }
 
 .header__option > summary > img {
-  height: 25px;
-  width: 25px;
+  height: 40px;
+  width: 40px;
   border: solid 1px rgb(230, 230, 230);
   border-radius: 50%;
 }

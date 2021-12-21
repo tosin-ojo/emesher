@@ -1,23 +1,8 @@
 import {
   BusinessOutlined,
-  Email,
-  EmailOutlined,
   ExitToAppOutlined,
-  Forum,
-  ForumOutlined,
-  Help,
-  HelpOutline,
   Home,
   HomeOutlined,
-  MoreHoriz,
-  MoreHorizOutlined,
-  PaymentOutlined,
-  PeopleAlt,
-  PeopleAltOutlined,
-  PinDrop,
-  PinDropOutlined,
-  Settings,
-  SettingsOutlined,
 } from "@material-ui/icons";
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
@@ -25,18 +10,7 @@ import { auth } from "../../utils/firebase";
 import "./Sidebar.css";
 import { useStateValue } from "../../StateProvider";
 
-function Sidebar({
-  home,
-  forum,
-  requests,
-  messages,
-  pinned,
-  members,
-  transactions,
-  settings,
-  more,
-  help,
-}) {
+function Sidebar({ home, requests }) {
   const [{ sidebar, user }, dispatch] = useStateValue();
   const history = useHistory();
   const [displayOverlay, setDisplayOverlay] = useState(false);
@@ -104,7 +78,7 @@ function Sidebar({
         style={{ display: windowWidth > 959 && sidebar ? "none" : "" }}
       >
         <div
-          className="sidebar__navIcon sidebar__465h"
+          className="sidebar__navIcon"
           style={home && style}
           onClick={() => history.push("/")}
         >
@@ -119,80 +93,6 @@ function Sidebar({
         >
           <BusinessOutlined />
           <span className="sidebar__toolTip">Requests</span>
-        </div>
-
-        <div
-          className="sidebar__navIcon"
-          style={forum && style}
-          onClick={() => history.push("/forum")}
-        >
-          {forum ? <Forum /> : <ForumOutlined />}
-          <span className="sidebar__toolTip">Forum</span>
-        </div>
-
-        <div
-          className="sidebar__navIcon"
-          style={messages && style}
-          onClick={() => history.push("/messages")}
-        >
-          {messages ? <Email /> : <EmailOutlined />}
-          <span className="sidebar__toolTip">Messages</span>
-        </div>
-
-        <div
-          className="sidebar__navIcon"
-          style={members && style}
-          onClick={() => history.push("/members")}
-        >
-          {members ? <PeopleAlt /> : <PeopleAltOutlined />}
-          <span className="sidebar__toolTip">Members</span>
-        </div>
-
-        <div
-          className="sidebar__navIcon"
-          style={pinned && style}
-          onClick={() => history.push("/pinned")}
-        >
-          {pinned ? <PinDrop /> : <PinDropOutlined />}
-          <span className="sidebar__toolTip">Pinned</span>
-        </div>
-
-        <div
-          className="sidebar__navIcon"
-          style={transactions && style}
-          onClick={() => history.push("/transactions")}
-        >
-          <PaymentOutlined />
-          <span className="sidebar__toolTip">Transactions</span>
-        </div>
-
-        <div
-          className="sidebar__navIcon"
-          style={settings && style}
-          onClick={() => history.push("/settings")}
-        >
-          {settings ? <Settings /> : <SettingsOutlined />}
-          <span className="sidebar__toolTip">Settings</span>
-        </div>
-
-        <div
-          className="sidebar__navIcon sidebar__465v"
-          style={help && style}
-          onClick={() => {
-            history.push("/help");
-          }}
-        >
-          {help ? <Help /> : <HelpOutline />}
-          <span className="sidebar__toolTip">Help</span>
-        </div>
-
-        <div
-          className="sidebar__navIcon"
-          style={more && style}
-          onClick={() => history.push("/more")}
-        >
-          {more ? <MoreHoriz /> : <MoreHorizOutlined />}
-          <span className="sidebar__toolTip">More</span>
         </div>
 
         <div
@@ -241,69 +141,6 @@ function Sidebar({
           </div>
 
           <div
-            className="sidebar__nav"
-            style={forum && style}
-            onClick={() => history.push("/forum")}
-          >
-            {forum ? <Forum /> : <ForumOutlined />}
-            <span>Forum</span>
-          </div>
-
-          <div
-            className="sidebar__nav"
-            style={messages && style}
-            onClick={() => history.push("/messages")}
-          >
-            {messages ? <Email /> : <EmailOutlined />}
-            <span>Messages</span>
-          </div>
-
-          <div
-            className="sidebar__nav"
-            style={members && style}
-            onClick={() => history.push("/members")}
-          >
-            {members ? <PeopleAlt /> : <PeopleAltOutlined />}
-            <span>Members</span>
-          </div>
-
-          <div
-            className="sidebar__nav"
-            style={pinned && style}
-            onClick={() => history.push("/pinned")}
-          >
-            {pinned ? <PinDrop /> : <PinDropOutlined />}
-            <span>Pinned</span>
-          </div>
-
-          <div
-            className="sidebar__nav"
-            style={transactions && style}
-            onClick={() => history.push("/transactions")}
-          >
-            <PaymentOutlined />
-            <span>Transactions</span>
-          </div>
-
-          <div
-            className="sidebar__nav"
-            style={settings && style}
-            onClick={() => history.push("/settings")}
-          >
-            {settings ? <Settings /> : <SettingsOutlined />}
-            <span>Settings</span>
-          </div>
-
-          <div
-            className="sidebar__nav"
-            style={more && style}
-            onClick={() => history.push("/more")}
-          >
-            {more ? <MoreHoriz /> : <MoreHorizOutlined />}
-            <span>More</span>
-          </div>
-
-          <div
             className="sidebar__logOut"
             onClick={handleAuthentication}
             style={{ backgroundColor: !user && "rgb(0, 172, 0)" }}
@@ -327,7 +164,7 @@ function Sidebar({
         }}
       >
         <div
-          className="sidebar__nav sidebar__465h"
+          className="sidebar__nav"
           style={home && style}
           onClick={() => {
             history.push("/");
@@ -348,102 +185,6 @@ function Sidebar({
         >
           <BusinessOutlined />
           <span>Requests</span>
-        </div>
-
-        <div
-          className="sidebar__nav"
-          style={forum && style}
-          onClick={() => {
-            history.push("/forum");
-            closeSidebar();
-          }}
-        >
-          {forum ? <Forum /> : <ForumOutlined />}
-          <span>Forum</span>
-        </div>
-
-        <div
-          className="sidebar__nav"
-          style={messages && style}
-          onClick={() => {
-            history.push("/messages");
-            closeSidebar();
-          }}
-        >
-          {messages ? <Email /> : <EmailOutlined />}
-          <span>Messages</span>
-        </div>
-
-        <div
-          className="sidebar__nav"
-          style={members && style}
-          onClick={() => {
-            history.push("/members");
-            closeSidebar();
-          }}
-        >
-          {members ? <PeopleAlt /> : <PeopleAltOutlined />}
-          <span>Members</span>
-        </div>
-
-        <div
-          className="sidebar__nav"
-          style={pinned && style}
-          onClick={() => {
-            history.push("/pinned");
-            closeSidebar();
-          }}
-        >
-          {pinned ? <PinDrop /> : <PinDropOutlined />}
-          <span>Pinned</span>
-        </div>
-
-        <div
-          className="sidebar__nav"
-          style={transactions && style}
-          onClick={() => {
-            history.push("/transactions");
-            closeSidebar();
-          }}
-        >
-          <PaymentOutlined />
-          <span>Transactions</span>
-        </div>
-
-        <div
-          className="sidebar__nav"
-          style={settings && style}
-          onClick={() => {
-            history.push("/settings");
-            closeSidebar();
-          }}
-        >
-          {settings ? <Settings /> : <SettingsOutlined />}
-          <span>Settings</span>
-        </div>
-
-        <div
-          className="sidebar__nav sidebar__465v"
-          style={help && style}
-          onClick={() => {
-            history.push("/help");
-            closeSidebar();
-          }}
-        >
-          {help ? <Help /> : <HelpOutline />}
-          <span>Help</span>
-        </div>
-
-        <div
-          className="sidebar__nav"
-          style={more && style}
-          onClick={() => {
-            history.push("/more");
-            closeSidebar();
-          }}
-        >
-          {more ? <MoreHoriz /> : <MoreHorizOutlined />}
-          <span>More</span>
         </div>
 
         <div

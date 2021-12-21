@@ -146,7 +146,6 @@ function Home() {
     rating,
     price,
   ]);
-  console.log(displayFilter);
 
   return (
     <>
@@ -204,6 +203,7 @@ function Home() {
                 <form>
                   <h4>Search by keyword:</h4>
                   <input
+                    className="home__search"
                     type="text"
                     value={keyword}
                     onChange={(e) => {
@@ -251,8 +251,23 @@ function Home() {
                   </select>
                 </form>
 
-                <form>
-                  <h4>Order by:</h4>
+                <form
+                  style={{
+                    padding: "10px",
+                    display: "flex",
+                    flexDirection: "column",
+                  }}
+                >
+                  <h4
+                    style={{
+                      marginBottom: "10px",
+                      color: "rgb(0, 172, 0",
+                      fontWeight: "500",
+                      fontSize: "15px",
+                    }}
+                  >
+                    Order by:
+                  </h4>
                   <select
                     onChange={(e) => {
                       setFilterPrice(false);
@@ -261,7 +276,7 @@ function Home() {
                       setOrderBy(e.target.value);
                     }}
                     defaultValue={orderBy}
-                    className="requestAll__select"
+                    className="home__order__select"
                   >
                     <option value="newest">Newest first</option>
                     <option value="highestPrice">Highest price first</option>

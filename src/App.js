@@ -9,7 +9,6 @@ import { auth, db } from "./utils/firebase";
 import { useStateValue } from "./StateProvider";
 import Payment from "./pages/Payment/Payment";
 import RequestAll from "./pages/RequestAll/RequestAll";
-import FootNav from "./components/FootNav/FootNav";
 import Loading from "./components/Loading/Loading";
 import Alert from "@material-ui/lab/Alert";
 import Fade from "@material-ui/core/Fade";
@@ -159,7 +158,6 @@ function App() {
               <>
                 <Header indicators={indicators} />
                 <Profile />
-                <FootNav />
               </>
             )}
           </Route>
@@ -171,7 +169,6 @@ function App() {
               <>
                 <Header indicators={indicators} />
                 <ProductDetails product />
-                <FootNav />
               </>
             )}
           </Route>
@@ -183,7 +180,6 @@ function App() {
               <>
                 <Header indicators={indicators} />
                 <RequestBid />
-                <FootNav />
               </>
             )}
           </Route>
@@ -195,7 +191,6 @@ function App() {
               <>
                 <Header indicators={indicators} />
                 <RequestAll />
-                <FootNav />
               </>
             )}
           </Route>
@@ -207,7 +202,6 @@ function App() {
               <>
                 <Header indicators={indicators} />
                 <Confirmation />
-                <FootNav />
               </>
             )}
           </Route>
@@ -219,7 +213,6 @@ function App() {
               <>
                 <Header indicators={indicators} />
                 <Payment />
-                <FootNav />
               </>
             )}
           </Route>
@@ -231,7 +224,6 @@ function App() {
               <>
                 <Header indicators={indicators} />
                 <Checkout />
-                <FootNav />
               </>
             )}
           </Route>
@@ -247,7 +239,6 @@ function App() {
               <>
                 <Header indicators={indicators} />
                 <Home />
-                <FootNav home />
               </>
             )}
           </Route>

@@ -113,7 +113,7 @@
   height: 40px;
   color: white;
   cursor: pointer;
-  margin-top: 5px;
+  margin-top: auto;
 }
 
 .sidebar__logOut > span {
@@ -168,16 +168,12 @@
     display: flex;
   }
 
-  .sidebar__465h {
-    display: none;
-  }
-
   .sidebarIcon {
     display: none;
   }
 
   .sidebarSmall {
-    height: calc(100vh - 120px);
+    height: calc(100vh - 59px);
     margin-bottom: 60px;
   }
 }
