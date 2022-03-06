@@ -415,7 +415,7 @@ function RequestBid() {
               </div>
             </section>
 
-            {request[0].data.email !== user.email && activeNav === "details" && (
+            {request[0].data.email !== user?.email && activeNav === "details" && (
               <main className="requestBid__sections">
                 <section className="requestBid__bodyContainer">
                   <section className="requestBid__body">
@@ -597,54 +597,56 @@ function RequestBid() {
                 </section>
               </main>
             )}
-            {request[0].data.email !== user.email && activeNav === "proposals" && (
-              <div className="requestBid__bidsCtn">
-                <div className="requestBid__bids">
-                  {bids.map((bid) => (
-                    <div key={bid.id}>
-                      <Bids bid={bid} />
-                    </div>
-                  ))}
-                </div>
-                <section className="requestBid__bidsDetails">
-                  <h3 className="requestBid__bidsDetailsHeader">
-                    Proposal Details
-                  </h3>
-                  <div className="requestBid__bidDetailsBody">
-                    <div>
-                      <BeenhereOutlined fontSize="small" />
-                      <span>
-                        {bids.length} bid{bids.length > 1 ? "s" : ""} submitted
-                      </span>
-                    </div>
-                    <div>
-                      <GradeOutlined fontSize="small" />
-                      <span>
-                        <span>{requestInfo[0]?.data.rating?.toFixed(1)}</span> (
-                        {requestInfo[0]?.data.reviewCount} reviews)
-                      </span>
-                    </div>
-                    <div>
-                      <MoneyOutlined fontSize="small" />
-                      <span>
-                        <CurrencyFormat
-                          renderText={(value) => value}
-                          decimalScale={2}
-                          value={bids
-                            .map((bid) => bid.data.bid)
-                            .reduce((acc, value) => acc + value, 0)}
-                          displayType={"text"}
-                          thousandSeparator={true}
-                          prefix={"₦"}
-                        />{" "}
-                        (Average)
-                      </span>
-                    </div>
+            {request[0].data.email !== user?.email &&
+              activeNav === "proposals" && (
+                <div className="requestBid__bidsCtn">
+                  <div className="requestBid__bids">
+                    {bids.map((bid) => (
+                      <div key={bid.id}>
+                        <Bids bid={bid} />
+                      </div>
+                    ))}
                   </div>
-                </section>
-              </div>
-            )}
-            {request[0].data.email === user.email && activeNav === "details" && (
+                  <section className="requestBid__bidsDetails">
+                    <h3 className="requestBid__bidsDetailsHeader">
+                      Proposal Details
+                    </h3>
+                    <div className="requestBid__bidDetailsBody">
+                      <div>
+                        <BeenhereOutlined fontSize="small" />
+                        <span>
+                          {bids.length} bid{bids.length > 1 ? "s" : ""}{" "}
+                          submitted
+                        </span>
+                      </div>
+                      <div>
+                        <GradeOutlined fontSize="small" />
+                        <span>
+                          <span>{requestInfo[0]?.data.rating?.toFixed(1)}</span>{" "}
+                          ({requestInfo[0]?.data.reviewCount} reviews)
+                        </span>
+                      </div>
+                      <div>
+                        <MoneyOutlined fontSize="small" />
+                        <span>
+                          <CurrencyFormat
+                            renderText={(value) => value}
+                            decimalScale={2}
+                            value={bids
+                              .map((bid) => bid.data.bid)
+                              .reduce((acc, value) => acc + value, 0)}
+                            displayType={"text"}
+                            thousandSeparator={true}
+                            prefix={"₦"}
+                          />{" "}
+                          (Average)
+                        </span>
+                      </div>
+                    </div>
+                  </section>
+                </div>
+              )}
+            {request[0].data.email === user?.email && activeNav === "details" && (
               <main className="requestBid__sections">
                 <section className="requestBid__bodyContainer">
                   <section className="requestBid__body">
@@ -779,53 +781,55 @@ function RequestBid() {
                 </section>
               </main>
             )}
-            {request[0].data.email === user.email && activeNav === "proposals" && (
-              <div className="requestBid__bidsCtn">
-                <div className="requestBid__bids">
-                  <Bids />
-                  <Bids />
-                  <Bids />
-                  <Bids />
-                  <Bids />
-                </div>
-                <section className="requestBid__bidsDetails">
-                  <h3 className="requestBid__bidsDetailsHeader">
-                    Proposal Details
-                  </h3>
-                  <div className="requestBid__bidDetailsBody">
-                    <div>
-                      <BeenhereOutlined fontSize="small" />
-                      <span>
-                        {bids.length} bid{bids.length > 1 ? "s" : ""} submitted
-                      </span>
-                    </div>
-                    <div>
-                      <GradeOutlined fontSize="small" />
-                      <span>
-                        <span>{requestInfo[0]?.data.rating?.toFixed(1)}</span> (
-                        {requestInfo[0]?.data.reviewCount} reviews)
-                      </span>
-                    </div>
-                    <div>
-                      <MoneyOutlined fontSize="small" />
-                      <span>
-                        <CurrencyFormat
-                          renderText={(value) => value}
-                          decimalScale={2}
-                          value={bids
-                            .map((bid) => bid.data.bid)
-                            .reduce((acc, value) => acc + value, 0)}
-                          displayType={"text"}
-                          thousandSeparator={true}
-                          prefix={"₦"}
-                        />{" "}
-                        (Average)
-                      </span>
-                    </div>
+            {request[0].data.email === user?.email &&
+              activeNav === "proposals" && (
+                <div className="requestBid__bidsCtn">
+                  <div className="requestBid__bids">
+                    <Bids />
+                    <Bids />
+                    <Bids />
+                    <Bids />
+                    <Bids />
                   </div>
-                </section>
-              </div>
-            )}
+                  <section className="requestBid__bidsDetails">
+                    <h3 className="requestBid__bidsDetailsHeader">
+                      Proposal Details
+                    </h3>
+                    <div className="requestBid__bidDetailsBody">
+                      <div>
+                        <BeenhereOutlined fontSize="small" />
+                        <span>
+                          {bids.length} bid{bids.length > 1 ? "s" : ""}{" "}
+                          submitted
+                        </span>
+                      </div>
+                      <div>
+                        <GradeOutlined fontSize="small" />
+                        <span>
+                          <span>{requestInfo[0]?.data.rating?.toFixed(1)}</span>{" "}
+                          ({requestInfo[0]?.data.reviewCount} reviews)
+                        </span>
+                      </div>
+                      <div>
+                        <MoneyOutlined fontSize="small" />
+                        <span>
+                          <CurrencyFormat
+                            renderText={(value) => value}
+                            decimalScale={2}
+                            value={bids
+                              .map((bid) => bid.data.bid)
+                              .reduce((acc, value) => acc + value, 0)}
+                            displayType={"text"}
+                            thousandSeparator={true}
+                            prefix={"₦"}
+                          />{" "}
+                          (Average)
+                        </span>
+                      </div>
+                    </div>
+                  </section>
+                </div>
+              )}
           </>
         )}
       </div>
